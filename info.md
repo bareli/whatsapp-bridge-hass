@@ -1,9 +1,15 @@
 # WhatsApp Bridge
 
+![WhatsApp Bridge logo](custom_components/whatsapp_bridge/brand/logo.png)
+
 > ⚠️ **Unofficial WhatsApp client.** This integration uses
 > [`whatsapp-web.js`](https://wwebjs.dev/) inside a companion add-on.
 > WhatsApp's Terms of Service do not allow bot-style use of personal accounts.
 > Your account may be banned. **Use a secondary phone number, not your primary one.**
+
+| QR pairing card | Phonebook panel |
+|---|---|
+| ![QR card](docs/qr-card.png) | ![Panel](docs/panel.png) |
 
 Send and receive WhatsApp messages from Home Assistant automations.
 
