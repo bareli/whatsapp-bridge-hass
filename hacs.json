@@ -1,0 +1,7 @@
+{
+  "name": "WhatsApp Bridge",
+  "homeassistant": "2024.10.0",
+  "render_readme": true,
+  "filename": "whatsapp-qr-card.js",
+  "country": ["IL", "US"]
+}

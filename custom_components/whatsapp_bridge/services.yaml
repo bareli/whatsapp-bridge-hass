@@ -1,0 +1,162 @@
+send_text:
+  name: Send WhatsApp text
+  description: Send a plain text WhatsApp message.
+  fields:
+    target:
+      name: Target
+      description: Phone number in E.164 (e.g. +972501234567), contact name, or contact id.
+      required: true
+      example: "+972501234567"
+      selector:
+        text:
+    message:
+      name: Message
+      description: Body of the WhatsApp message.
+      required: true
+      selector:
+        text:
+          multiline: true
+    quoted_msg_id:
+      name: Quote message id
+      description: Optional id of a message to quote.
+      selector:
+        text:
+
+send_media:
+  name: Send WhatsApp media
+  description: Send a WhatsApp message with attached media.
+  fields:
+    target:
+      name: Target
+      description: Phone number, contact name, or contact id.
+      required: true
+      selector:
+        text:
+    caption:
+      name: Caption
+      selector:
+        text:
+          multiline: true
+    media_url:
+      name: Media URL
+      description: HTTPS URL of the media to fetch and send.
+      selector:
+        text:
+    media_path:
+      name: Media path
+      description: Local file path under the HA config directory.
+      selector:
+        text:
+    as_document:
+      name: Send as document
+      default: false
+      selector:
+        boolean:
+    as_voice:
+      name: Send as voice note
+      default: false
+      selector:
+        boolean:
+
+send_location:
+  name: Send WhatsApp location
+  fields:
+    target:
+      name: Target
+      required: true
+      selector:
+        text:
+    latitude:
+      name: Latitude
+      required: true
+      selector:
+        number:
+          min: -90
+          max: 90
+          step: 0.000001
+          mode: box
+    longitude:
+      name: Longitude
+      required: true
+      selector:
+        number:
+          min: -180
+          max: 180
+          step: 0.000001
+          mode: box
+    name:
+      name: Place name
+      selector:
+        text:
+
+contact_add:
+  name: Add contact
+  fields:
+    name:
+      name: Name
+      required: true
+      selector:
+        text:
+    phone:
+      name: Phone
+      required: true
+      selector:
+        text:
+    tags:
+      name: Tags
+      selector:
+        select:
+          multiple: true
+          custom_value: true
+          options: []
+    notes:
+      name: Notes
+      selector:
+        text:
+          multiline: true
+
+contact_update:
+  name: Update contact
+  fields:
+    contact_id:
+      name: Contact ID
+      required: true
+      selector:
+        text:
+    name:
+      name: Name
+      selector:
+        text:
+    phone:
+      name: Phone
+      selector:
+        text:
+    tags:
+      name: Tags
+      selector:
+        select:
+          multiple: true
+          custom_value: true
+          options: []
+    notes:
+      name: Notes
+      selector:
+        text:
+          multiline: true
+
+contact_delete:
+  name: Delete contact
+  fields:
+    contact_id:
+      name: Contact ID
+      required: true
+      selector:
+        text:
+
+session_logout:
+  name: WhatsApp logout
+  description: Force re-pair with the phone (next start shows a new QR).
+
+session_restart:
+  name: Restart WhatsApp client
+  description: Recreate the underlying WhatsApp Web client without losing the session.

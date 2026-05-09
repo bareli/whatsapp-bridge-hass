@@ -1,0 +1,14 @@
+{
+  "domain": "whatsapp_bridge",
+  "name": "WhatsApp Bridge",
+  "version": "0.1.0",
+  "documentation": "https://github.com/your-username/whatsapp-bridge-hass",
+  "issue_tracker": "https://github.com/your-username/whatsapp-bridge-hass/issues",
+  "codeowners": ["@your-username"],
+  "config_flow": true,
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "dependencies": ["http", "frontend", "websocket_api"],
+  "after_dependencies": ["hassio", "lovelace"],
+  "requirements": []
+}

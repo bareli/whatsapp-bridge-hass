@@ -1,0 +1,103 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "WhatsApp Bridge — Terms of Service",
+        "description": "This integration uses an unofficial WhatsApp client (whatsapp-web.js). WhatsApp's Terms of Service do not allow bot-style use of personal accounts and your account may be banned. We strongly recommend using a secondary phone number, not your primary one. Read the {tos_url}. You must accept this risk to continue.",
+        "data": {
+          "tos_accepted": "I understand and accept the risk"
+        }
+      },
+      "connection": {
+        "title": "Connect to the WhatsApp Bridge add-on",
+        "description": "Enter the host and port of the add-on. Leave the token blank on first install — the integration will fetch it automatically.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "token": "API token"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reauthenticate WhatsApp Bridge",
+        "data": {
+          "token": "API token"
+        }
+      }
+    },
+    "error": {
+      "tos_required": "You must accept the terms to continue.",
+      "cannot_connect": "Cannot reach the add-on at that host/port.",
+      "invalid_token": "Token rejected by the add-on.",
+      "missing_token": "No token provided and bootstrap is unavailable.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "single_instance_allowed": "Only one WhatsApp Bridge instance is supported.",
+      "reauth_successful": "Reauthentication successful."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "connected": {
+        "name": "Connected"
+      }
+    },
+    "sensor": {
+      "state": {
+        "name": "State",
+        "state": {
+          "init": "Initialising",
+          "qr": "Waiting for QR scan",
+          "loading": "Loading",
+          "ready": "Ready",
+          "disconnected": "Disconnected"
+        }
+      },
+      "battery": {
+        "name": "Phone battery"
+      },
+      "last_message_at": {
+        "name": "Last message at"
+      }
+    },
+    "image": {
+      "qr": {
+        "name": "QR code"
+      }
+    }
+  },
+  "services": {
+    "send_text": {
+      "name": "Send text",
+      "description": "Send a plain text WhatsApp message."
+    },
+    "send_media": {
+      "name": "Send media",
+      "description": "Send media via WhatsApp."
+    },
+    "send_location": {
+      "name": "Send location",
+      "description": "Send a location pin via WhatsApp."
+    },
+    "contact_add": {
+      "name": "Add contact",
+      "description": "Add a phonebook contact."
+    },
+    "contact_update": {
+      "name": "Update contact",
+      "description": "Update an existing phonebook contact."
+    },
+    "contact_delete": {
+      "name": "Delete contact",
+      "description": "Delete a phonebook contact."
+    },
+    "session_logout": {
+      "name": "Logout",
+      "description": "Force re-pairing on next start."
+    },
+    "session_restart": {
+      "name": "Restart client",
+      "description": "Restart the WhatsApp Web client without losing the session."
+    }
+  }
+}
