@@ -50,7 +50,7 @@ SCHEMA_SEND_MEDIA = vol.Schema(
 
 SCHEMA_SEND_LOCATION = vol.Schema(
     {
-        vol.Required("target"): cv.string,
+        vol.Required("recipient"): cv.string,
         vol.Required("latitude"): vol.Coerce(float),
         vol.Required("longitude"): vol.Coerce(float),
         vol.Optional("name"): cv.string,
@@ -162,7 +162,7 @@ def async_register_services(hass: HomeAssistant) -> None:
 
     async def handle_send_location(call: ServiceCall) -> None:
         client = _client(hass)
-        phone = await _resolve(hass, call.data["target"])
+        phone = await _resolve(hass, call.data["recipient"])
         try:
             await client.send_location(
                 phone,

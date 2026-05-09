@@ -23,7 +23,9 @@ jobs:
         uses: hacs/action@main
         with:
           category: integration
+          ignore: brands
       - name: HACS Action (plugin)
         uses: hacs/action@main
         with:
           category: plugin
+          ignore: brands
