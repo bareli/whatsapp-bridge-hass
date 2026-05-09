@@ -19,7 +19,7 @@ Send and receive WhatsApp messages from Home Assistant automations.
 ## Requirements
 
 - Home Assistant OS or Supervised — the integration depends on the
-  [WhatsApp Bridge add-on](https://github.com/your-username/whatsapp-bridge-addon).
+  [WhatsApp Bridge add-on](https://github.com/bareli/whatsapp-bridge-addon).
 - Architectures: amd64, aarch64.
 
 ## Setup

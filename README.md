@@ -31,7 +31,7 @@ Send and receive WhatsApp messages from Home Assistant. Includes:
 In **Settings → Add-ons → Add-on Store → ⋮ → Repositories**, add:
 
 ```
-https://github.com/your-username/whatsapp-bridge-addon
+https://github.com/bareli/whatsapp-bridge-addon
 ```
 
 Then install **WhatsApp Bridge** and start it. The first start downloads
@@ -51,8 +51,8 @@ In HACS, open **Custom repositories** and add this repository **twice**:
 
 | URL | Category |
 |---|---|
-| `https://github.com/your-username/whatsapp-bridge-hass` | Integration |
-| `https://github.com/your-username/whatsapp-bridge-hass` | Plugin |
+| `https://github.com/bareli/whatsapp-bridge-hass` | Integration |
+| `https://github.com/bareli/whatsapp-bridge-hass` | Plugin |
 
 Download "WhatsApp Bridge" under both categories, restart Home Assistant.
 
