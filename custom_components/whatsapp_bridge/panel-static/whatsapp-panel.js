@@ -275,10 +275,40 @@ let WhatsAppPanel = class WhatsAppPanel extends i {
     `;
     }
     _statusEntity() {
-        return this.hass?.states?.["sensor.whatsapp_state"];
+        const states = this.hass?.states || {};
+        const STATES = new Set(["init", "qr", "loading", "ready", "disconnected"]);
+        for (const id of [
+            "sensor.whatsapp_bridge_state",
+            "sensor.whatsapp_state",
+        ]) {
+            if (states[id])
+                return states[id];
+        }
+        for (const id of Object.keys(states)) {
+            if (id.startsWith("sensor.") &&
+                id.includes("whatsapp") &&
+                STATES.has(states[id].state)) {
+                return states[id];
+            }
+        }
+        return undefined;
     }
     _qrEntity() {
-        return this.hass?.states?.["image.whatsapp_qr"];
+        const states = this.hass?.states || {};
+        for (const id of [
+            "image.whatsapp_bridge_qr",
+            "image.whatsapp_bridge_qr_code",
+            "image.whatsapp_qr",
+        ]) {
+            if (states[id])
+                return states[id];
+        }
+        for (const id of Object.keys(states)) {
+            if (id.startsWith("image.") && id.includes("whatsapp")) {
+                return states[id];
+            }
+        }
+        return undefined;
     }
     _renderPairing() {
         const status = this._statusEntity();

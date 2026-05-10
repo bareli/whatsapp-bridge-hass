@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.4
+
+- Sidebar panel now finds the bridge state and QR image entities by
+  scanning `hass.states`. Previously it hard-coded
+  `sensor.whatsapp_state` and `image.whatsapp_qr`, but with
+  `has_entity_name=True` the actual entity ids are
+  `sensor.whatsapp_bridge_state` / `image.whatsapp_bridge_qr`.
+
 ## 0.1.3
 
 - Sidebar **WhatsApp** panel now renders the pairing QR at the top
