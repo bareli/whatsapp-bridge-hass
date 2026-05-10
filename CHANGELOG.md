@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.3
+
+- Sidebar **WhatsApp** panel now renders the pairing QR at the top
+  whenever the bridge is in `qr` / `loading` / `disconnected` state. This
+  is the primary pairing flow; no Lovelace card needed.
+- Integration auto-registers the `whatsapp-qr-card` Lovelace element via
+  `frontend.add_extra_js_url`, so the card is still available for users
+  who want it on a dashboard.
+- Drop the dual HACS install. Modern HACS rejects the same repository
+  under two categories anyway. Single integration install now suffices.
+- Drop `hass/dist/` and the HACS Plugin validation step.
+
 ## 0.1.1
 
 - Add brand assets (`icon.png`, `logo.png` at 1x and 2x) under

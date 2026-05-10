@@ -21,7 +21,7 @@ from .const import (
     PLATFORMS,
 )
 from .coordinator import WhatsAppCoordinator
-from .panel import async_register_panel, async_unregister_panel
+from .panel import async_register_frontend, async_unregister_panel
 from .services import async_register_services, async_unregister_services
 from .store import PhonebookStore
 from .ws_api import async_register_ws
@@ -120,7 +120,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         async_register_ws(hass)
         bucket["services_registered"] = True
 
-    await async_register_panel(hass, version=entry.version_string if hasattr(entry, "version_string") else "1")
+    await async_register_frontend(hass, version="0.1.3")
 
     return True
 

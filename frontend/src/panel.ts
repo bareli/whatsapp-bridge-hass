@@ -13,6 +13,14 @@ import {
 
 type Tab = "contacts" | "conversations" | "settings";
 
+const STATE_LABEL: Record<string, string> = {
+  init: "Initialising",
+  qr: "Waiting for QR scan",
+  loading: "Loading",
+  ready: "Ready",
+  disconnected: "Disconnected",
+};
+
 interface Draft {
   id?: string;
   name: string;
@@ -149,6 +157,83 @@ export class WhatsAppPanel extends LitElement {
         background: #fef3c7; color: #78350f;
         padding: 10px 12px; border-radius: 6px; font-size: 12px; line-height: 1.4;
       }
+      .pair {
+        display: flex; flex-direction: column; align-items: center; gap: 14px;
+        padding: 20px;
+        background: var(--card-background-color);
+        border: 1px solid var(--divider-color);
+        border-radius: 10px;
+        margin: 16px 0 24px;
+      }
+      .pair img {
+        width: 280px; height: 280px;
+        background: #fff; padding: 10px; border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.15);
+      }
+      .pill {
+        display: inline-block; padding: 4px 14px; border-radius: 999px;
+        color: #fff; font-size: 13px; font-weight: 600;
+      }
+      .pill.ready { background: #16a34a; }
+      .pill.qr { background: #f59e0b; }
+      .pill.loading { background: #3b82f6; }
+      .pill.init { background: #6b7280; }
+      .pill.disconnected { background: #dc2626; }
+      .pair-steps {
+        font-size: 13px; color: var(--secondary-text-color);
+        text-align: center; max-width: 380px; line-height: 1.5;
+      }
+    `;
+  }
+
+  private _statusEntity() {
+    return this.hass?.states?.["sensor.whatsapp_state"];
+  }
+
+  private _qrEntity() {
+    return this.hass?.states?.["image.whatsapp_qr"];
+  }
+
+  private _renderPairing() {
+    const status = this._statusEntity();
+    const state = status?.state ?? "init";
+    if (state === "ready") return nothing;
+
+    const qrEntity = this._qrEntity();
+    const qrSrc =
+      state === "qr" && qrEntity?.attributes?.entity_picture
+        ? (qrEntity.attributes.entity_picture as string)
+        : null;
+    const phone = (status?.attributes?.phone as string | undefined) ?? null;
+
+    return html`
+      <div class="pair">
+        <span class="pill ${state}">${STATE_LABEL[state] ?? state}</span>
+        ${qrSrc
+          ? html`
+              <img alt="WhatsApp pairing QR" src=${qrSrc} />
+              <div class="pair-steps">
+                On your phone, open <strong>WhatsApp → Linked Devices →
+                Link a device</strong>, then scan the QR above. The QR
+                refreshes every 30 seconds.
+              </div>
+            `
+          : state === "loading"
+          ? html`<div class="pair-steps">WhatsApp Web is loading… this can take 30–60 seconds.</div>`
+          : state === "disconnected"
+          ? html`
+              <div class="pair-steps">
+                Bridge is offline. Check the
+                <strong>WhatsApp Bridge</strong> add-on log, or restart it.
+              </div>
+              <button class="btn" @click=${async () =>
+                this.hass && (await restartSession(this.hass))}>Restart client</button>
+            `
+          : html`<div class="pair-steps">Waiting for the bridge to come online…</div>`}
+        ${phone
+          ? html`<div class="pair-steps">Linked: <code>${phone}</code></div>`
+          : nothing}
+      </div>
     `;
   }
 
@@ -170,6 +255,7 @@ export class WhatsAppPanel extends LitElement {
       </nav>
       <main>
         ${this._error ? html`<div class="error">${this._error}</div>` : nothing}
+        ${this._renderPairing()}
         ${this._tab === "contacts" ? this._renderContacts() : nothing}
         ${this._tab === "conversations" ? this._renderConversations() : nothing}
         ${this._tab === "settings" ? this._renderSettings() : nothing}

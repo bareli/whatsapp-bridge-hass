@@ -16,6 +16,7 @@ EVENT_MESSAGE_RECEIVED = "whatsapp_message_received"
 PANEL_URL_PATH = "whatsapp"
 PANEL_STATIC_URL = "/whatsapp_bridge_static"
 PANEL_FILENAME = "whatsapp-panel.js"
+QR_CARD_FILENAME = "whatsapp-qr-card.js"
 
 SERVICE_SEND_TEXT = "send_text"
 SERVICE_SEND_MEDIA = "send_media"

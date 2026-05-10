@@ -55,14 +55,14 @@ if you leave it blank.
 
 ### 2. Install this integration via HACS
 
-In HACS, open **Custom repositories** and add this repository **twice**:
+HACS → top-right **⋮** → **Custom repositories** → add:
+- Repository: `https://github.com/bareli/whatsapp-bridge-hass`
+- Type: **Integration**
 
-| URL | Category |
-|---|---|
-| `https://github.com/bareli/whatsapp-bridge-hass` | Integration |
-| `https://github.com/bareli/whatsapp-bridge-hass` | Plugin |
-
-Download "WhatsApp Bridge" under both categories, restart Home Assistant.
+Then install "WhatsApp Bridge" and restart Home Assistant. The
+integration registers both the sidebar **WhatsApp** panel (with
+built-in QR pairing) and the optional `whatsapp-qr-card` Lovelace
+element automatically; no separate "plugin" install needed.
 
 ### 3. Configure
 

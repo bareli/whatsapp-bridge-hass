@@ -9,22 +9,22 @@ const baseTs = {
   sourceMap: true,
 };
 
-const baseSharedPlugins = [
-  resolve({ browser: true }),
-  commonjs(),
-];
+const baseSharedPlugins = [resolve({ browser: true }), commonjs()];
 
 export default [
   {
     input: "src/qr-card.ts",
     output: {
-      file: "../dist/whatsapp-qr-card.js",
+      file: "../custom_components/whatsapp_bridge/panel-static/whatsapp-qr-card.js",
       format: "es",
       sourcemap: true,
     },
     plugins: [
       ...baseSharedPlugins,
-      typescript({ ...baseTs, outDir: "../dist" }),
+      typescript({
+        ...baseTs,
+        outDir: "../custom_components/whatsapp_bridge/panel-static",
+      }),
     ],
   },
   {

@@ -32,7 +32,7 @@ Send and receive WhatsApp messages from Home Assistant automations.
 
 1. Install the **WhatsApp Bridge add-on** (separate repository).
 2. Start the add-on, copy the printed API token.
-3. Add this repository to HACS twice: once as **Integration**, once as **Plugin**.
+3. Add this repository to HACS as a **Custom repository**, type **Integration**.
 4. Restart Home Assistant.
 5. Settings → Devices & Services → Add Integration → "WhatsApp Bridge".
 6. Add the QR card to a Lovelace dashboard and scan with your phone.
