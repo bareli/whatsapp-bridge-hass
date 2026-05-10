@@ -7,6 +7,7 @@ from homeassistant.components.binary_sensor import (
 )
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
@@ -34,6 +35,12 @@ class WhatsAppConnectedBinarySensor(
     def __init__(self, coordinator: WhatsAppCoordinator, entry_id: str) -> None:
         super().__init__(coordinator)
         self._attr_unique_id = f"{entry_id}_connected"
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, entry_id)},
+            name="WhatsApp Bridge",
+            manufacturer="whatsapp-web.js",
+            model="WhatsApp Web bridge",
+        )
 
     @property
     def is_on(self) -> bool:

@@ -8,6 +8,7 @@ from homeassistant.components.sensor import SensorDeviceClass, SensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import PERCENTAGE
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
@@ -38,6 +39,12 @@ class _Base(CoordinatorEntity[WhatsAppCoordinator], SensorEntity):
     def __init__(self, coordinator: WhatsAppCoordinator, entry_id: str) -> None:
         super().__init__(coordinator)
         self._entry_id = entry_id
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, entry_id)},
+            name="WhatsApp Bridge",
+            manufacturer="whatsapp-web.js",
+            model="WhatsApp Web bridge",
+        )
 
 
 class StateSensor(_Base):

@@ -6,6 +6,7 @@ from datetime import datetime
 from homeassistant.components.image import ImageEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, callback
+from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
@@ -37,6 +38,12 @@ class WhatsAppQrImage(CoordinatorEntity[WhatsAppCoordinator], ImageEntity):
         CoordinatorEntity.__init__(self, coordinator)
         ImageEntity.__init__(self, hass)
         self._attr_unique_id = f"{entry_id}_qr"
+        self._attr_device_info = DeviceInfo(
+            identifiers={(DOMAIN, entry_id)},
+            name="WhatsApp Bridge",
+            manufacturer="whatsapp-web.js",
+            model="WhatsApp Web bridge",
+        )
 
     @property
     def available(self) -> bool:

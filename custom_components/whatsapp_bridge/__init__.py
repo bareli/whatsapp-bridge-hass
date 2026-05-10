@@ -120,7 +120,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         async_register_ws(hass)
         bucket["services_registered"] = True
 
-    await async_register_frontend(hass, version="0.1.4")
+    await async_register_frontend(hass, version="0.1.5")
 
     return True
 

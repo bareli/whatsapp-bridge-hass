@@ -280,14 +280,13 @@ let WhatsAppPanel = class WhatsAppPanel extends i {
         for (const id of [
             "sensor.whatsapp_bridge_state",
             "sensor.whatsapp_state",
+            "sensor.state",
         ]) {
-            if (states[id])
+            if (states[id] && STATES.has(states[id].state))
                 return states[id];
         }
         for (const id of Object.keys(states)) {
-            if (id.startsWith("sensor.") &&
-                id.includes("whatsapp") &&
-                STATES.has(states[id].state)) {
+            if (id.startsWith("sensor.") && STATES.has(states[id].state)) {
                 return states[id];
             }
         }
@@ -299,14 +298,11 @@ let WhatsAppPanel = class WhatsAppPanel extends i {
             "image.whatsapp_bridge_qr",
             "image.whatsapp_bridge_qr_code",
             "image.whatsapp_qr",
+            "image.qr",
+            "image.qr_code",
         ]) {
             if (states[id])
                 return states[id];
-        }
-        for (const id of Object.keys(states)) {
-            if (id.startsWith("image.") && id.includes("whatsapp")) {
-                return states[id];
-            }
         }
         return undefined;
     }

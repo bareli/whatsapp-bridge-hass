@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.5
+
+- Attach `DeviceInfo` to every entity so HA groups them under one device
+  card and gives entity ids the `whatsapp_bridge_` prefix on fresh
+  installs (existing installs keep their bare ids).
+- Sidebar panel: add `image.qr_code` and `sensor.state` (bare-id form)
+  to the entity discovery candidates so existing installs find the QR
+  immediately without a re-add.
+
 ## 0.1.4
 
 - Sidebar panel now finds the bridge state and QR image entities by
