@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/"/>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/changelog/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/changelog/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/examples/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/examples/"/>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/examples/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/install/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/install/"/>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/install/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/troubleshooting/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/usage/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/usage/"/>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/usage/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/he/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/he/changelog/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/changelog/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/he/examples/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/examples/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/he/install/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/install/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/install/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/he/troubleshooting/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://bareli.github.io/whatsapp-bridge-hass/he/usage/</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="he" href="https://bareli.github.io/whatsapp-bridge-hass/he/usage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bareli.github.io/whatsapp-bridge-hass/usage/"/>
+    </url>
+</urlset>
