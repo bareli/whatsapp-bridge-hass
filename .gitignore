@@ -7,3 +7,6 @@ venv/
 node_modules/
 frontend/build/
 *.log
+
+# MkDocs build output
+site/

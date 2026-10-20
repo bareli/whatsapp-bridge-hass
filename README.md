@@ -1,5 +1,7 @@
 # WhatsApp Bridge — Home Assistant integration
 
+Documentation (English / עברית): https://bareli.github.io/whatsapp-bridge-hass/
+
 ![WhatsApp Bridge logo](custom_components/whatsapp_bridge/brand/logo.png)
 
 > ⚠️ **Unofficial WhatsApp client.** This integration drives

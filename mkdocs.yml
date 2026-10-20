@@ -1,0 +1,87 @@
+site_name: WhatsApp Bridge
+site_description: Send and receive WhatsApp messages from Home Assistant.
+site_url: https://bareli.github.io/whatsapp-bridge-hass/
+repo_url: https://github.com/bareli/whatsapp-bridge-hass
+repo_name: bareli/whatsapp-bridge-hass
+edit_uri: edit/main/docs/
+copyright: Apache-2.0 License
+
+exclude_docs: |
+  generate_assets.py
+
+theme:
+  name: material
+  language: en
+  logo: assets/icon.png
+  favicon: assets/icon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: he
+          name: עברית
+          build: true
+          nav_translations:
+            Home: בית
+            Install: התקנה
+            Usage: שימוש
+            Examples: דוגמאות
+            Troubleshooting: פתרון בעיות
+            Changelog: יומן שינויים
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Install: install.md
+  - Usage: usage.md
+  - Examples: examples.md
+  - Troubleshooting: troubleshooting.md
+  - Changelog: changelog.md
